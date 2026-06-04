@@ -1,0 +1,203 @@
+// Commentaire sur une ligne
+
+/* Commentaires en Bloc */
+
+// pour utiliser les map (tableaux clef - valeur)
+//il faut l'indiquer à sass avec
+//@use "sass:map";
+@use "sass:map";
+@use "sass:color";
+// variables sass
+// couleurs
+$black-color: #333;
+$white-color: #fff;
+$code-color: #d63384;
+$body-background-color: #f4f5f0;
+// corps des pages
+$body-font: Arial, Verdana, Geneva, sans-serif;
+$body-font-color: $black-color;
+$body-font-size: 1.2rem;
+$body-line-height: 1.5rem;
+// goutières
+$gutter-x: 0.5rem;
+$gutter-y: 0.5rem;
+// listes
+$breakpointsList: 540px, 720px, 690px;
+// map
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
+);
+
+$rwd-max-width: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  xxxl: 1560px,
+);
+
+$rwd-bp-column-width: (
+  sm: calc(100% - 2 * $gutter-x),
+  md: calc(100% - 2 * $gutter-x),
+  lg: calc(50% - 2 * $gutter-x),
+  xl: calc((100% / 3) - 2 * $gutter-x),
+  xxl: calc((100% / 3) - 2 * $gutter-x),
+  xxxl: calc(25% - 2 * $gutter-x),
+);
+
+/* Déclarations générales */
+/* root */
+:root {
+  font-family: $body-font;
+  background-color: $body-background-color;
+  color: $body-font-color;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+code {
+  color: #{$code-color};
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  // ou
+  // color: $code-color;
+}
+
+pre {
+  overflow: auto;
+}
+
+/* déclaration de classes */
+
+// Les mixin permettent de préparer des classes similaires
+// qui ne changent que pour quelques paramètres,
+// ceux appelés entre les parenthèses */
+
+@mixin alert($alert: lightblue) {
+    border-radius: calc($gutter-x/2);
+    margin: $gutter-x;
+    padding: $gutter-x;
+    color: black;
+    background: $alert;
+  box-shadow: 0 0 1px rgba($alert, 0.25);
+  border: 3px solid color.adjust($alert, $lightness: -20%);
+  //darken est déprécié mais toujours beaucoup utilisé
+  //border: 3px solid darken($alert, 20deg);
+}
+
+.alert-info {
+  @include alert;
+}
+
+.alert-danger {
+  @include alert($alert: orange);
+}
+
+.alert-success {
+  @include alert($alert: lightgreen);
+}
+
+%message-layout {
+  color: black;
+  margin: $gutter-x;
+  padding: $gutter-x;
+  border-radius: calc($gutter-x/2);
+  font-style: italic;
+}
+
+.message{
+  @extend %message-layout;
+}
+
+.message-info {
+  @extend %message-layout;
+  background: lightblue;
+  box-shadow: 0 0 1px rgba(lightblue, 0.25);
+  border: 3px solid color.adjust(lightblue, $lightness: -20%);
+}
+
+.message-danger{
+    @extend %message-layout;
+    background: orange;
+    box-shadow: 0 0 1px rgba(orange, 0.25);
+    border: 3px solid color.adjust(orange, $lightness: -20%);
+    
+}
+
+.message-success{
+    @extend %message-layout;
+    background: lightgreen;
+    box-shadow: 0 0 1px rgba(lightgreen, 0.25);
+    border: 3px solid color.adjust(lightgreen, $lightness: -20%);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Déclarations de structure */
+
+body {
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: $code-color;
+    &:hover {
+      background-color: $code-color;
+      color: $white-color;
+    }
+  }
+
+  > nav {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/* media queries */
+// Boucle des breakpoints pour créer la classe container
+// avec une liste
+//  @each $breakpoint in $breakpointsList{
+//    /* largeur max #{$breakpoint} */
+//    .maxwidth#{$breakpoint}{
+//    max-width: $breakpoint;
+//  }
+//}
+
+// Boucle plus complète sur le map :
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-x;
+  padding-right: $gutter-x;
+}
+
+@each $breakpoint, $value in $breakpoints {
+  /* #{$breakpoint} #{$value}  */
+  @media screen and (min-width: #{$value}) {
+    .container {
+      max-width: map.get($rwd-max-width, $breakpoint);
+    }
+
+    .row > * {
+      max-width: #{map.get($rwd-bp-column-width, $breakpoint)};
+    }
+  }
+}

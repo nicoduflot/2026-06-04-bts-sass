@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css nid</title>
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            > header{
+                background-color: black;
+                color: white;
+            }
+        }
+        
+        main{
+            color: inherit;
+
+            section{
+                display: flex;
+                flex-wrap: wrap;
+                > *{
+                    max-width: 100%;
+                }
+            }
+        }
+        /* en nesting les déclaration suivants ne fonctionnent pas */
+        @media screen and(min-width: 768px) {
+            main {
+                & section {
+                    > * {
+                        max-width: 50%;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contenir">
+            <h1>Le CSS en nid ?</h1>
+        </div>
+    </header>
+    <main class="contenir">
+        <section>
+            <article>
+                <h2>Nesting</h2>
+                <p>
+                    On peut écrire le CSS directement en "nesting" ('nidification')
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

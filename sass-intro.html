@@ -19,6 +19,7 @@
             <ul>
                 <li><a href="./index.html">Retour à bootstrap et Sass</a></li>
                 <li><a href="./sass-intro.html">Introduction à Sass</a></li>
+                <li><a href="./sass-exo.html">Exo Sass</a></li>
                 <li><a href="./custom-01.html">Customiser à partir de BS</a></li>
                 <li><a href="./custom-02.html">Customisation totale</a></li>
             </ul>
@@ -99,7 +100,10 @@ $breakpointsList: 540px, 720px, 690px;
                     Par exemple, on crée deux map pour gérer un affichage responsive d'un conteneur
                 </p>
                 <code><pre>
-// map, il faut ajoute sass:use map en début de script
+// pour utiliser les map (tableaux clef - valeur)
+//il faut l'indiquer à sass avec 
+//@use "sass:map";
+
 $breakpoints: (
   sm: 576px,
   md: 768px,
@@ -239,14 +243,14 @@ $rwd-max-width: (
     border-radius: 0.25rem;
 }
 </pre></code>
-                <div class="info">
-                    .info
+                <div class="alert-info">
+                    .alert-info
                 </div>
-                <div class="danger">
-                    .danger
+                <div class="alert-danger">
+                    .alert-danger
                 </div>
-                <div class="success">
-                    .success
+                <div class="alert-success">
+                    .alert-success
                 </div>
             </article>
             <article>
@@ -335,6 +339,33 @@ body > footer a:hover {
     color: darkblue;
 }
 </pre></code>
+            </article>
+            <article>
+                <h2>Extend / héritage</h2>
+                <p>
+                    Il est possible d'étendre une déclaration CSS à plusieurs autres classe en utilisant '%' pour la déclaration à étendre et en l'injectant dans les classes nécéssitant cette extension.
+                </p>
+                <p>
+                    Cela permet de n'appeler qu'une classe pour profiter d'une déclaration d'un format et d'une couleur par exemple.
+                </p>
+                <div class="message">
+                    .message
+                </div>
+                <div class="alert-info">
+                    .alert-info
+                </div>
+                <div class="message alert-info">
+                    .message .alert-info
+                </div>
+                <div class="message message-info">
+                    .message .message-info
+                </div>
+                <div class="message message-danger">
+                    .message .message-danger
+                </div>
+                <div class="message message-success">
+                    .message .message-success
+                </div>
             </article>
         </section>
     </main>
