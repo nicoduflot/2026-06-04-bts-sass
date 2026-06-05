@@ -1,0 +1,101 @@
+:root {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $site-color;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: $site-link-color;
+  text-decoration: none;
+  display: block;
+  padding: calc($gutter-x/2);
+  &:hover, &:focus-visible, &:focus{
+    background-color: $site-link-color;
+    color: $site-bg-color;
+    outline: none;
+  }
+}
+
+.contenir {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-x;
+  padding-right: $gutter-x;
+}
+
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.h1 {
+  @include heading-styles(2rem);
+}
+.h2 {
+  @include heading-styles(1.5rem, $margin-top: 0.83rem, $margin-bottom: 0.83rem);
+}
+.h3 {
+  @include heading-styles(1.17rem, $margin-top: 1rem, $margin-bottom: 1rem);
+}
+.h4 {
+  @include heading-styles(1rem, $margin-top: 1.33rem, $margin-bottom: 1.33rem);
+}
+.h5 {
+  @include heading-styles(0.83rem, $margin-top: 1.67rem, $margin-bottom: 1.67rem);
+}
+.h6 {
+  @include heading-styles(0.67rem, $margin-top: 2.33rem, $margin-bottom: 2.33rem);
+}
+
+@each $size in $sizes {
+  .#{$size}-title {
+    font-family: Impact, sans-serif;
+    font-size: map.get($title-font-sizes, $size);
+  }
+}
+
+
+body{
+    margin: 0;
+    > header{
+        background-color: $header-bg-color;
+        color: $header-color;
+        padding-top: $gutter-y;
+        padding-bottom: $gutter-y;
+    }
+    > nav ul{
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+@import './icons';
+
+@each $bp, $value in $bps {
+  @media screen and (min-width: #{$value}) {
+    .contenir {
+      max-width: map.get($min-width, $bp);
+    }
+
+    .ligne > * {
+      min-width: #{map.get($max-c-width, $bp)};
+    }
+
+    @if($value == 992px){
+        body > nav ul{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+    }
+
+  }
+}

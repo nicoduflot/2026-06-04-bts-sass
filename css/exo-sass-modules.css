@@ -1,3 +1,174 @@
+:root {
+  font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: #333;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: purple;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem;
+}
+a:hover, a:focus-visible, a:focus {
+  background-color: purple;
+  color: white;
+  outline: none;
+}
+
+.contenir {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0.67rem;
+  margin-bottom: 0.67rem;
+  display: block;
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.83rem;
+  margin-bottom: 0.83rem;
+  display: block;
+}
+
+.h3 {
+  font-size: 1.17rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1.33rem;
+  margin-bottom: 1.33rem;
+  display: block;
+}
+
+.h5 {
+  font-size: 0.83rem;
+  font-weight: bold;
+  margin-top: 1.67rem;
+  margin-bottom: 1.67rem;
+  display: block;
+}
+
+.h6 {
+  font-size: 0.67rem;
+  font-weight: bold;
+  margin-top: 2.33rem;
+  margin-bottom: 2.33rem;
+  display: block;
+}
+
+.small-title {
+  font-family: Impact, sans-serif;
+  font-size: 1rem;
+}
+
+.large-title {
+  font-family: Impact, sans-serif;
+  font-size: 1.5rem;
+}
+
+.larger-title {
+  font-family: Impact, sans-serif;
+  font-size: 2rem;
+}
+
+body {
+  margin: 0;
+}
+body > header {
+  background-color: #333;
+  color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+body > nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.icon-success::before, .icon-danger::before, .icon-info::before, .icon::before {
+  font-family: "bootstrap-icons";
+  content: "\f1a6";
+  margin-right: 0.4em;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125rem;
+  display: inline-block;
+}
+
+.icon-info::before {
+  content: "\f430";
+  color: steelblue;
+  text-align: -1.25rem;
+}
+
+.icon-danger::before {
+  content: "\f33a";
+  color: crimson;
+}
+
+.icon-success::before {
+  content: "\f26a";
+  color: seagreen;
+}
+
+@media screen and (min-width: 576px) {
+  .contenir {
+    max-width: 540px;
+  }
+  .ligne > * {
+    min-width: calc(100% - 1rem);
+  }
+}
+@media screen and (min-width: 992px) {
+  .contenir {
+    max-width: 960px;
+  }
+  .ligne > * {
+    min-width: calc(50% - 1rem);
+  }
+  body > nav ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .contenir {
+    max-width: 1320px;
+  }
+  .ligne > * {
+    min-width: calc(33.3333333333% - 1rem);
+  }
+}
 
 /*# sourceMappingURL=exo-sass-modules.css.map */
