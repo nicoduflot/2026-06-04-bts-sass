@@ -1,11 +1,13 @@
+/**/
 :root {
-  --font-family: v.$font-family;
+  /* Arial, Verdana, Helvetica, sans-serif */
+  --font-family: Arial, Verdana, Helvetica, sans-serif;
   font-family: var(--font-family);
-  --font-size: v.$base-font-size;
+  --font-size: 1.2rem;
   font-size: var(--font-size);
-  --line_height: v.$base-line-height;
+  --line_height: 1.5rem;
   line-height: var(--line_height);
-  --color: v.$site-color;
+  --color: #333;
   color: var(--color);
 }
 

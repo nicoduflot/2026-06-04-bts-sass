@@ -1,14 +1,74 @@
-// custom-01.scss
+// custom-02.scss
 
-// Première méthode : Tout prendre de bootstrap
+// Deuxième méthode : Inclure seulement ce dont on a besoin des modules de bootstrap
 
-// 1. C'est ici qu'il faut inclure toutes les surcharge de variables (mais les fonctions ne seront pas disponibles)
+// Attention, il y a des module a inclure impérativement, quelques soient les modules désirés
 
-// 2. on importe le scss bootstrap qui récupère bootstrap en entier
+// 1. OBLIGATOIRE importer les fonction bs (manipulation des couleur, les svg, etc.)
 
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/functions';
 
-// 3. ajouter enfin le scss customisé
+// 2. C'est ici qu'on importe les surcharge de variables
+
+$cs-size-list: small, large, larger;
+
+// 3. inclure le reste des variable, normales et dark
+
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/variables-dark';
+
+// 4. On ajoute ici les surcharge des maps
+
+// Ajouter un breakpoint xxxl
+
+// créer un map pour ajouter les media-queries écran >= 1600px
+$cs-grid-breakpoints: (
+    xxxl: 1600px
+    );
+
+// créer un map pour ajouter les largeur max pour écran >= 1600px
+$cs-container-max-widths: (
+    xxxl: 1560px
+);
+
+$cs-display-font-sizes: (7: 2rem);
+
+// fusionner les maps customs aux maps présentes dans _variables et _variables-dark
+
+$grid-breakpoints: map-merge($grid-breakpoints, $cs-grid-breakpoints);
+
+$container-max-widths: map-merge($container-max-widths, $cs-container-max-widths);
+
+$display-font-sizes: map-merge($display-font-sizes, $cs-display-font-sizes);
+
+
+
+// 5. Inclure les partie OBLIGATOIRES (REQUISES)
+@import '../node_modules/bootstrap/scss/maps';
+@import '../node_modules/bootstrap/scss/mixins';
+/* root */
+@import '../node_modules/bootstrap/scss/root';
+
+// 6. Inclure les éléments de bootstrap que l'on désire
+@import '../node_modules/bootstrap/scss/utilities';
+/* reboot */
+@import '../node_modules/bootstrap/scss/reboot';
+/* type */
+@import '../node_modules/bootstrap/scss/type';
+/* images */
+@import '../node_modules/bootstrap/scss/images';
+/* containers */
+@import '../node_modules/bootstrap/scss/containers';
+/* grid */
+@import '../node_modules/bootstrap/scss/grid';
+/* helpers */
+@import '../node_modules/bootstrap/scss/helpers';
+
+// 7. les utilitaires d'API en dernier pour générer les classes basées sur le map sass qui se trouve dans _utilities.scss
+/* api */
+@import '../node_modules/bootstrap/scss/utilities/api';
+
+// 8. Ajouter le scss custom
 
 @import './custom-01-modules/hemihead-font';
 @import './custom-01-modules/headings';
