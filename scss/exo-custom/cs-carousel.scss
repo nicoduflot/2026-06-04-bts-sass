@@ -1,0 +1,18 @@
+.carousel-inner{
+    width: unset;
+    max-width: 100%;
+}
+
+.carousel-item.active, .carousel-item-next, .carousel-item-prev{
+    display: unset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    max-height: $cs-carousel-max-height;
+}
+
+.carousel-item.active >*, .carousel-item-next >*, .carousel-item-prev >*{
+     max-height: $cs-carousel-item-max-height;
+     max-width: 100%;
+}

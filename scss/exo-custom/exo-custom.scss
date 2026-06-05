@@ -1,0 +1,54 @@
+// custom-02.scss
+
+// Deuxième méthode : Inclure seulement ce dont on a besoin des modules de bootstrap
+
+// Attention, il y a des module a inclure impérativement, quelques soient les modules désirés
+
+// 1. OBLIGATOIRE importer les fonctions bs (manipulation des couleur, les svg, etc.)
+/* fonctions */
+@import '../../node_modules/bootstrap/scss/functions';
+
+// 2. C'est ici qu'on importe les surcharge de variables
+/* surcharge variables */
+
+@import './cs-variables.scss';
+
+// 3. inclure le reste des variable, normales et dark
+/* import variables */
+
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/variables-dark';
+
+// 4. On ajoute ici les surcharge des maps
+/* surcharge des map */
+
+@import './cs-maps';
+
+// 5. Inclure les partie OBLIGATOIRES (REQUISES)
+/* import requis */
+@import '../../node_modules/bootstrap/scss/maps';
+@import '../../node_modules/bootstrap/scss/mixins';
+// 6. Inclure les éléments de bootstrap que l'on désire
+/* root */
+@import '../../node_modules/bootstrap/scss/root';
+@import '../../node_modules/bootstrap/scss/reboot';
+@import '../../node_modules/bootstrap/scss/transitions';
+@import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/close';
+@import '../../node_modules/bootstrap/scss/carousel';
+@import '../../node_modules/bootstrap/scss/images';
+@import '../../node_modules/bootstrap/scss/containers';
+@import '../../node_modules/bootstrap/scss/grid';
+@import '../../node_modules/bootstrap/scss/nav';
+@import '../../node_modules/bootstrap/scss/helpers';
+
+
+// 7. les utilitaires d'API en dernier pour générer les classes basées sur le map sass qui se trouve dans _utilities.scss
+/* api */
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/utilities/api';
+
+// 8. Ajouter le scss custom
+/* gestion Carousel */
+
+@import './cs-carousel.scss';

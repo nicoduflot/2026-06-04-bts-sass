@@ -1,0 +1,22 @@
+// Ajouter un breakpoint xxxl
+
+// créer un map pour ajouter les media-queries écran >= 1600px
+$cs-grid-breakpoints: (
+    xxxl: 1600px
+    );
+
+// créer un map pour ajouter les largeur max pour écran >= 1600px
+$cs-container-max-widths: (
+    xxxl: 1560px
+);
+
+$cs-display-font-sizes: (7: 2rem);
+
+// fusionner les maps customs aux maps présentes dans _variables et _variables-dark
+
+$grid-breakpoints: map-merge($grid-breakpoints, $cs-grid-breakpoints);
+
+$container-max-widths: map-merge($container-max-widths, $cs-container-max-widths);
+
+$display-font-sizes: map-merge($display-font-sizes, $cs-display-font-sizes);
+

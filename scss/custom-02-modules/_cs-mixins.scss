@@ -1,0 +1,12 @@
+@mixin heading-styles(
+  $size,
+  $weight: bold,
+  $margin-top: 0.67rem,
+  $margin-bottom: 0.67rem
+) {
+  font-size: $size;
+  font-weight: $weight;
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  display: block;
+}

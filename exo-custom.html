@@ -5,18 +5,76 @@ mais :
     scss : 
         * en module pour le scss ajouté
         * changer un ou deux map
-        * intégrer dans la page le carousel (mettre img-fluid sur les image dans le carousel et le carousel en dark, voir exemple bootstrap précédent)
+        * intégrer dans la page le carousel (mettre img-fluid sur les images dans le carousel et le carousel en dark, voir exemple bootstrap précédent)
         * le reboot
         * La navigation (prendre nav-tab)
 -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coco</title>
+    <link rel="stylesheet" href="./css/exo-custom.css" />
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </head>
+
 <body>
-    
+    <header class="bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <div class="larger-title">Exercice CS BTS</div>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link" href="./index.html">Retour à bootstrap et Sass</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sass-intro.html">Introduction à Sass</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sass-exo.html">Exo Sass</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sass-exo-partials.html">Exo Sass Partials</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sass-exo-modules.html">Exo Sass Modules</a></li>
+                <li class="nav-item"><a class="nav-link" href="./custom-01.html">Customiser à partir de BS</a></li>
+                <li class="nav-item"><a class="nav-link" href="./custom-02.html">Customisation totale</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./exo-custom.html">Exo Customisation</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <section>
+            <div id="carouselExampleIndicators" class="carousel slide bg-dark">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/james-white-composite-400w.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/batman-b-timm-b-w.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/DC-Comics-Batman-Caped-Crusader-official-cardboard-cutout-buy-now-at-starstills__04189.1582849820.jpg" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
