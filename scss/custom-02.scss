@@ -4,46 +4,28 @@
 
 // Attention, il y a des module a inclure impérativement, quelques soient les modules désirés
 
-// 1. OBLIGATOIRE importer les fonction bs (manipulation des couleur, les svg, etc.)
-
+// 1. OBLIGATOIRE importer les fonctions bs (manipulation des couleur, les svg, etc.)
+/* fonctions */
 @import '../node_modules/bootstrap/scss/functions';
 
 // 2. C'est ici qu'on importe les surcharge de variables
+/* surcharge variables */
 
-$cs-size-list: small, large, larger;
+@import './custom-02-modules/cs-variables';
 
 // 3. inclure le reste des variable, normales et dark
+/* import variables */
 
 @import '../node_modules/bootstrap/scss/variables';
 @import '../node_modules/bootstrap/scss/variables-dark';
 
 // 4. On ajoute ici les surcharge des maps
+/* surcharge des map */
 
-// Ajouter un breakpoint xxxl
-
-// créer un map pour ajouter les media-queries écran >= 1600px
-$cs-grid-breakpoints: (
-    xxxl: 1600px
-    );
-
-// créer un map pour ajouter les largeur max pour écran >= 1600px
-$cs-container-max-widths: (
-    xxxl: 1560px
-);
-
-$cs-display-font-sizes: (7: 2rem);
-
-// fusionner les maps customs aux maps présentes dans _variables et _variables-dark
-
-$grid-breakpoints: map-merge($grid-breakpoints, $cs-grid-breakpoints);
-
-$container-max-widths: map-merge($container-max-widths, $cs-container-max-widths);
-
-$display-font-sizes: map-merge($display-font-sizes, $cs-display-font-sizes);
-
-
+@import './custom-02-modules/cs-maps';
 
 // 5. Inclure les partie OBLIGATOIRES (REQUISES)
+/* import requis */
 @import '../node_modules/bootstrap/scss/maps';
 @import '../node_modules/bootstrap/scss/mixins';
 /* root */

@@ -1,6 +1,5 @@
 /**/
 :root {
-  /* Arial, Verdana, Helvetica, sans-serif */
   --font-family: Arial, Verdana, Helvetica, sans-serif;
   font-family: var(--font-family);
   --font-size: 1.2rem;

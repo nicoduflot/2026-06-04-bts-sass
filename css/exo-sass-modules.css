@@ -1,8 +1,12 @@
 :root {
-  font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  color: #333;
+  --font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+  font-family: var(--font-family);
+  --font-size: 1.2rem;
+  font-size: var(--font-size);
+  --line_height: 1.5rem;
+  line-height: var(--line_height);
+  --color: #333;
+  color: var(--color);
 }
 
 *,

@@ -2,7 +2,6 @@
 @use './variables' as v;
 
 :root {
-  /* #{v.$font-family} */
   --font-family: #{v.$font-family};
   font-family: var(--font-family);
   --font-size: #{v.$base-font-size};
