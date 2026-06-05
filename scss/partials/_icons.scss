@@ -1,0 +1,43 @@
+%icon {
+  &::before {
+    font-family: "bootstrap-icons";
+    content: "\F1A6"; // bi-bootstrap (logo bootstrap par défaut)
+    margin-right: 0.4em;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125rem;
+    display: inline-block;
+  }
+}
+
+.icon {
+  @extend %icon;
+}
+
+.icon-info {
+  @extend %icon;
+  &::before {
+    content: "\F430"; // bi-info-circle
+    color: steelblue;
+    text-align: -1.25rem;
+  }
+}
+
+.icon-danger {
+  @extend %icon;
+  &::before {
+    content: "\f33a"; // bi-exclamation-triangle
+    color: crimson;
+  }
+}
+
+.icon-success {
+  @extend %icon;
+  &::before {
+    content: "\F26A"; // bi-check-circle-fill
+    color: seagreen;
+  }
+}

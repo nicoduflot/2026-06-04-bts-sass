@@ -1,0 +1,40 @@
+@use 'sass:map';
+$gutter-x: 0.5rem;
+$min-width: (
+  small: 540px,
+  large: 960px,
+  larger: 1320px,
+);
+
+$max-c-width: (
+  small: calc(100% - 2 * $gutter-x),
+  large: calc(50% - 2 * $gutter-x),
+  larger: calc((100% / 3) - 2 * $gutter-x),
+);
+
+$bps: (
+  small: 576px,
+  large: 992px,
+  larger: 1400px,
+);
+
+@each $bp, $value in $bps {
+  @media screen and (min-width: #{$value}) {
+    .contenir {
+      max-width: map.get($min-width, $bp);
+    }
+
+    .ligne > * {
+      min-width: #{map.get($max-c-width, $bp)};
+    }
+
+    @if($value == 992px){
+        body > nav ul{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+    }
+
+  }
+}

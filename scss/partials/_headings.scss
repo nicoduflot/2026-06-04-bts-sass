@@ -1,0 +1,32 @@
+@mixin heading-styles(
+  $size,
+  $weight: bold,
+  $margin-top: 0.67rem,
+  $margin-bottom: 0.67rem
+) {
+  font-size: $size;
+  font-weight: $weight;
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  display: block;
+}
+
+
+.h1 {
+  @include heading-styles(2rem);
+}
+.h2 {
+  @include heading-styles(1.5rem, $margin-top: 0.83rem, $margin-bottom: 0.83rem);
+}
+.h3 {
+  @include heading-styles(1.17rem, $margin-top: 1rem, $margin-bottom: 1rem);
+}
+.h4 {
+  @include heading-styles(1rem, $margin-top: 1.33rem, $margin-bottom: 1.33rem);
+}
+.h5 {
+  @include heading-styles(0.83rem, $margin-top: 1.67rem, $margin-bottom: 1.67rem);
+}
+.h6 {
+  @include heading-styles(0.67rem, $margin-top: 2.33rem, $margin-bottom: 2.33rem);
+}

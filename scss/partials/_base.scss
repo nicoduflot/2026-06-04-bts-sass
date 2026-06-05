@@ -1,0 +1,62 @@
+$site-bg-color: white;
+$site-color: #333;
+$header-bg-color: #333;
+$header-color: white;
+$site-link-color: purple;
+$base-font-size: 1.2rem;
+$base-line-height: 1.5rem;
+$font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+$gutter-x: 0.5rem;
+$gutter-y: 0.5rem;
+
+:root {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $site-color;
+}
+/*  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: $site-link-color;
+  text-decoration: none;
+  display: block;
+  padding: calc($gutter-x/2);
+  &:hover, &:focus-visible, &:focus{
+    background-color: $site-link-color;
+    color: $site-bg-color;
+    outline: none;
+  }
+}
+
+.contenir {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-x;
+  padding-right: $gutter-x;
+}
+
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body{
+    margin: 0;
+    > header{
+        background-color: $header-bg-color;
+        color: $header-color;
+        padding-top: $gutter-y;
+        padding-bottom: $gutter-y;
+    }
+    > nav ul{
+        list-style-type: none;
+        padding: 0;
+    }
+}
