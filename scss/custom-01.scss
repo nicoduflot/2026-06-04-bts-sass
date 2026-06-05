@@ -1,0 +1,15 @@
+// custom-01.scss
+
+// Première méthode : Tout prendre de bootstrap
+
+// 1. C'est ici qu'il faut inclure toutes les surcharge de variables (mais les fonctions ne seront pas disponibles)
+
+// 2. on importe le scss bootstrap qui récupère bootstrap en entier
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+// 3. ajouter enfin le scss customisé
+
+@import './custom-01-modules/hemihead-font';
+@import './custom-01-modules/headings';
+@import './custom-01-modules/lists';
