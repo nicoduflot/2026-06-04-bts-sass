@@ -1,19 +1,14 @@
-$site-bg-color: white;
-$site-color: #333;
-$header-bg-color: #333;
-$header-color: white;
-$site-link-color: purple;
-$base-font-size: 1.2rem;
-$base-line-height: 1.5rem;
-$font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
-$gutter-x: 0.5rem;
-$gutter-y: 0.5rem;
+@use './variables' as v;
 
 :root {
-  font-family: $font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  color: $site-color;
+  --font-family: v.$font-family;
+  font-family: var(--font-family);
+  --font-size: v.$base-font-size;
+  font-size: var(--font-size);
+  --line_height: v.$base-line-height;
+  line-height: var(--line_height);
+  --color : v.$site-color;
+  color: var(--color);
 }
 /*  */
 *,
@@ -23,13 +18,13 @@ $gutter-y: 0.5rem;
 }
 
 a {
-  color: $site-link-color;
+  color: v.$site-link-color;
   text-decoration: none;
   display: block;
-  padding: calc($gutter-x/2);
+  padding: calc(v.$gutter-x/2);
   &:hover, &:focus-visible, &:focus{
-    background-color: $site-link-color;
-    color: $site-bg-color;
+    background-color: v.$site-link-color;
+    color: v.$site-bg-color;
     outline: none;
   }
 }
@@ -37,8 +32,8 @@ a {
 .contenir {
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter-x;
-  padding-right: $gutter-x;
+  padding-left: v.$gutter-x;
+  padding-right: v.$gutter-x;
 }
 
 .ligne {
@@ -50,10 +45,10 @@ a {
 body{
     margin: 0;
     > header{
-        background-color: $header-bg-color;
-        color: $header-color;
-        padding-top: $gutter-y;
-        padding-bottom: $gutter-y;
+        background-color: v.$header-bg-color;
+        color: v.$header-color;
+        padding-top: v.$gutter-y;
+        padding-bottom: v.$gutter-y;
     }
     > nav ul{
         list-style-type: none;

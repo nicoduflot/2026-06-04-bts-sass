@@ -1,0 +1,24 @@
+@use './variables' as v;
+$min-width: (
+  small: 540px,
+  large: 960px,
+  larger: 1320px,
+);
+
+$max-c-width: (
+  small: calc(100% - 2 * v.$gutter-x),
+  large: calc(50% - 2 * v.$gutter-x),
+  larger: calc((100% / 3) - 2 * v.$gutter-x),
+);
+
+$title-font-sizes: (
+  small: 1rem,
+  large: 1.5rem,
+  larger: 2rem,
+);
+
+$bps: (
+  small: 576px,
+  large: 992px,
+  larger: 1400px,
+);

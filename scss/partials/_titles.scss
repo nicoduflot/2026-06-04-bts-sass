@@ -1,16 +1,10 @@
 @use 'sass:map';
+@use './variables' as v;
+@use './maps' as m;
 
-$sizes: small, large, larger;
-
-$title-font-sizes: (
-  small: 1rem,
-  large: 1.5rem,
-  larger: 2rem,
-);
-
-@each $size in $sizes {
+@each $size in v.$sizes {
   .#{$size}-title {
     font-family: Impact, sans-serif;
-    font-size: map.get($title-font-sizes, $size);
+    font-size: map.get(m.$title-font-sizes, $size);
   }
 }
